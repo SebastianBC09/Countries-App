@@ -1,101 +1,115 @@
-# Countries Information App
+# 🌍 Countries Information App
 
-A modern, responsive web application that provides detailed information about countries, built with Next.js 14, TypeScript, and Tailwind CSS. This application showcases country information including borders and population data visualization.
+[![Next.js](https://img.shields.io/badge/Next.js%2014-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
-## 🌟 Features
+A modern, responsive web application that provides comprehensive information about countries worldwide. This application showcases country information including borders and population data visualization. Built with cutting-edge technologies and designed with user experience in mind. 🚀
 
-- Browse available countries with an elegant grid layout
-- View detailed country information including:
-  - Official and common names
-  - Regional information
-  - Country flag
-  - Border countries with interactive navigation
-  - Historical population data visualization
-- Responsive design that works on all devices
-- Dark mode support
-- Smooth animations and transitions
-- Type-safe implementation
+## 🌟 Key Features
+
+| Feature | Description |
+|---------|-------------|
+| 🗺️ Country Explorer | Browse countries with an elegant, responsive grid layout |
+| 📊 Data Visualization | Interactive charts showing historical population data |
+| 🌓 Dark Mode | Seamless dark/light theme switching |
+| 🎯 Type Safety | Full TypeScript implementation |
+| 🚄 Fast Navigation | Optimized routing with Next.js App Router |
+| 💫 Smooth Animations | Polished transitions using Framer Motion |
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Recharts for data visualization
+
+| Category | Technologies |
+|----------|-------------|
+| 📱 Frontend Framework | Next.js 14 (App Router) |
+| 🔒 Type Safety | TypeScript |
+| 🎨 Styling | Tailwind CSS |
+| ✨ Animations | Framer Motion |
+| 📊 Data Visualization | Recharts |
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
-- Backend service running on port 3001 (see backend repository)
 
-### Installation
+| Requirement | Version |
+|-------------|---------|
+| Node.js | ≥ 18.0.0 |
+| npm/yarn | Latest |
+| Backend Service | Running on port 3001 |
 
-1. Clone the repository:
+### 📥 Installation Steps
+
+1️⃣ **Clone & Install**
 ```bash
+# Clone repository
 git clone <repository-url>
+
+# Navigate to frontend
 cd frontend
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-# or
-yarn install
 ```
 
-3. Create a `.env.local` file in the root directory with the following content:
+2️⃣ **Environment Setup**
+```bash
+# Create environment file
+cp .env.example .env.local
 ```
-NEXT_PUBLIC_BACKEND_URL=http://localhost:3001/api
-NEXT_PUBLIC_API_TIMEOUT=30000
-```
-4. Start the development server:
-```
+
+3️⃣ **Configure Environment**
+
+| Variable | Description | Default Value |
+|----------|-------------|---------------|
+| `NEXT_PUBLIC_BACKEND_URL` | Backend API endpoint | `http://localhost:3001/api` |
+| `NEXT_PUBLIC_API_TIMEOUT` | API timeout (ms) | `30000` |
+
+4️⃣ **Start Development**
+```bash
 npm run dev
-# or
-yarn dev
 ```
-The application will be available at `http://localhost:3000`
+
+Visit `http://localhost:3000` 🎉
 
 ## 📁 Project Structure
 
 ```
 frontend/
-├── app/                    # Next.js app directory
+├── 📱 app/                 # Next.js app directory
 │   ├── page.tsx           # Home page
 │   └── country/
-│       └── [code]/        # Dynamic country pages
-├── components/            # React components
+│       └── [code]/        # Dynamic country routes
+├── 🧩 components/         # React components
 │   ├── countries/        # Country-specific components
 │   └── pages/            # Page-level components
-├── lib/                  # Utilities and hooks
-│   ├── api/             # API configuration and client
+├── 🛠️ lib/               # Utilities and hooks
+│   ├── api/             # API configuration
 │   ├── hooks/           # Custom React hooks
 │   └── types/           # TypeScript types
-└── public/              # Static assets
+└── 🗂️ public/           # Static assets
 ```
 
-## 🔧 Available Scripts
+## 📜 Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | 🔥 Start development server |
+| `npm run build` | 🏗️ Build for production |
+| `npm run start` | 🚀 Start production server |
+| `npm run lint` | 🔍 Run ESLint |
+| `npm run type-check` | ✅ TypeScript checking |
 
-## ⚙️ Environment Variables
+## 🔌 API Integration
 
-|           Variable         |   Description   | Default |
-| :------------------------: |:---------------:| :-------:|
-| NEXT_PUBLIC_BACKEND_URL    | Backend API URL | `http://localhost:3001/api` |
-| NEXT_PUBLIC_API_TIMEOUT    | API  request timeout in milliseconds | 30000
+### Endpoints
 
-
-
-
+| Endpoint | Description | Response |
+|----------|-------------|----------|
+| `GET /api/countries` | List all countries | Array of country objects |
+| `GET /api/countries/:code` | Detailed country info | Single country object with details |
 
 ## 🌐 API Integration
 The frontend communicates with two main API endpoints:
@@ -116,19 +130,17 @@ The frontend communicates with two main API endpoints:
 
 ## 🎨 Design Features
 
-- Modern, clean UI with attention to detail
-- Smooth animations and transitions using Framer Motion
-- Responsive grid layout for optimal viewing on all devices
-- Interactive data visualization with Recharts
-- Dark mode support with Tailwind CSS
+- 🕹️ Modern, clean UI with attention to detail
+- 💫 Smooth animations and transitions using Framer Motion
+- 📱 Responsive grid layout for optimal viewing on all devices
+- 📊 Interactive data visualization with Recharts
+- 🌓 Dark mode support with Tailwind CSS
 
 ## ⚡ Performance Optimizations
 
-- Server and Client components optimization
-- Image optimization with Next.js Image component
-- Lazy loading and code splitting
-- TypeScript for type safety
-- Efficient state management with React hooks
+- 🔄 Server and Client components optimization
+- 🔍 TypeScript for type safety
+- 🎯 Basic state management with React hooks
 
 ## 🤝 Contributing
 
@@ -140,3 +152,7 @@ The frontend communicates with two main API endpoints:
 
 ## 📝 License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+Made with ❤️ as part of a technical assessment
