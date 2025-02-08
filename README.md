@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Countries Information App
 
-## Getting Started
+A modern, responsive web application that provides detailed information about countries, built with Next.js 14, TypeScript, and Tailwind CSS. This application showcases country information including borders and population data visualization.
 
-First, run the development server:
+## 🌟 Features
 
+- Browse available countries with an elegant grid layout
+- View detailed country information including:
+  - Official and common names
+  - Regional information
+  - Country flag
+  - Border countries with interactive navigation
+  - Historical population data visualization
+- Responsive design that works on all devices
+- Dark mode support
+- Smooth animations and transitions
+- Type-safe implementation
+
+## 🛠️ Tech Stack
+
+### Frontend
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Recharts for data visualization
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+- Backend service running on port 3001 (see backend repository)
+
+### Installation
+
+1. Clone the repository:
 ```bash
+git clone <repository-url>
+cd frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Create a `.env.local` file in the root directory with the following content:
+```
+NEXT_PUBLIC_BACKEND_URL=http://localhost:3001/api
+NEXT_PUBLIC_API_TIMEOUT=30000
+```
+4. Start the development server:
+```
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+The application will be available at `http://localhost:3000`
+
+## 📁 Project Structure
+
+```
+frontend/
+├── app/                    # Next.js app directory
+│   ├── page.tsx           # Home page
+│   └── country/
+│       └── [code]/        # Dynamic country pages
+├── components/            # React components
+│   ├── countries/        # Country-specific components
+│   └── pages/            # Page-level components
+├── lib/                  # Utilities and hooks
+│   ├── api/             # API configuration and client
+│   ├── hooks/           # Custom React hooks
+│   └── types/           # TypeScript types
+└── public/              # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Environment Variables
 
-## Learn More
+|           Variable         |   Description   | Default |
+| :------------------------: |:---------------:| :-------:|
+| NEXT_PUBLIC_BACKEND_URL    | Backend API URL | `http://localhost:3001/api` |
+| NEXT_PUBLIC_API_TIMEOUT    | API  request timeout in milliseconds | 30000
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 API Integration
+The frontend communicates with two main API endpoints:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Get Available Countries:
+- Endpoint: `GET /api/countries`
+- Returns a list of all available countries
+
+
+2. Get Country Details:
+
+- Endpoint: `GET /api/countries/:code`
+- Returns detailed information about a specific country including:
+    - Common and official names
+    - Border countries
+    - Population data
+    - Flag URL
+
+## 🎨 Design Features
+
+- Modern, clean UI with attention to detail
+- Smooth animations and transitions using Framer Motion
+- Responsive grid layout for optimal viewing on all devices
+- Interactive data visualization with Recharts
+- Dark mode support with Tailwind CSS
+
+## ⚡ Performance Optimizations
+
+- Server and Client components optimization
+- Image optimization with Next.js Image component
+- Lazy loading and code splitting
+- TypeScript for type safety
+- Efficient state management with React hooks
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'feat: add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## 📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
