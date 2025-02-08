@@ -11,7 +11,7 @@ export function useCountries() {
     const fetchCountries = async () => {
       try {
         const response = await countriesApi.getCountries();
-        setCountries(response.data);
+        setCountries(response.data.data); // Access the nested data property
       } catch (err: unknown) {
         setError(err instanceof Error ? err.message : 'An unknown error occurred');
       } finally {
@@ -26,7 +26,7 @@ export function useCountries() {
 }
 
 export function useCountryDetail(countryCode: T.CountryCode) {
-  const [country, setCountry] = useState<T.CountryDetail | null>(null);
+  const [country, setCountry] = useState<T.CountryDetail  | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -34,7 +34,7 @@ export function useCountryDetail(countryCode: T.CountryCode) {
     const fetchCountryDetail = async () => {
       try {
         const response = await countriesApi.getCountryDetail(countryCode);
-        setCountry(response.data);
+        setCountry(response.data.data); // Access the nested data property
       } catch (err: unknown) {
         setError(err instanceof Error ? err.message : 'An unknown error occurred');
       } finally {
