@@ -1,14 +1,12 @@
 import { Suspense } from 'react';
 import { CountryDetailPage } from '@/components/pages/CountryDetailPage';
-import { Params } from 'next/dist/server/request/params';
-interface CountryPageProps {
-  params: Params & {
-    code: string;
-  }
-}
 
-export default async function CountryPage({ params }: CountryPageProps) {
-  const { code } = await params
+export default async function CountryPage({
+  params: { code }
+}: {
+  params: { code: string }
+}) {
+
   return (
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center
