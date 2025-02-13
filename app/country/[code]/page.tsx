@@ -1,13 +1,12 @@
 import { Suspense } from 'react';
 import { CountryDetailPage } from '@/components/pages/CountryDetailPage';
 
-type Props = {
-  params: { code: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+type PageProps = {
+  params: { code: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
-export default async function CountryPage({ params }: Props) {
-  const { code } = params;
+export default function CountryPage({ params }: PageProps) {
   return (
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center
@@ -18,7 +17,7 @@ export default async function CountryPage({ params }: Props) {
         </div>
       </div>
     }>
-      <CountryDetailPage code={code} />
+      <CountryDetailPage code={params.code} />
     </Suspense>
   );
 }
