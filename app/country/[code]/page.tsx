@@ -1,9 +1,10 @@
-import { CountryDetailPage } from '@/components/pages/CountryDetailPage';
 import { Suspense } from 'react';
+import { CountryDetailPage } from '@/components/pages/CountryDetailPage';
+import { Params } from 'next/dist/server/request/params';
 interface CountryPageProps {
-  params: {
+  params: Params & {
     code: string;
-  };
+  }
 }
 
 export default async function CountryPage({ params }: CountryPageProps) {
