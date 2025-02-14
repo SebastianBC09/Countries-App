@@ -12,6 +12,10 @@ export async function fetchApi<T>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<ApiResponse<T>> {
+  if (!API_CONFIG.baseURL?.startsWith('http')) {
+    throw new Error('API baseURL must be an absolute URL');
+  }
+
   const url = `${API_CONFIG.baseURL}${endpoint}`;
 
   try {
