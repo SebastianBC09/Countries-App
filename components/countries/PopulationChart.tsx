@@ -9,6 +9,21 @@ interface PopulationChartProps {
 }
 
 export const PopulationChart = ({ data }: PopulationChartProps) => {
+    if (!data || data.length === 0) {
+    return (
+      <div className="relative p-6 bg-gradient-to-br from-white to-gray-50
+                 dark:from-gray-800 dark:to-gray-900
+                 rounded-2xl shadow-lg dark:shadow-2xl dark:shadow-blue-900/20
+                 border border-gray-100 dark:border-gray-700
+                 overflow-hidden">
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-3">
+          <span className="text-2xl">📊</span>
+          No population data available
+        </h2>
+      </div>
+    );
+  }
+
   const formatPopulation = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       notation: 'compact',
